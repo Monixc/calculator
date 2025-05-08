@@ -1,5 +1,5 @@
 let result = []
-let operators = ['+', '–', '×', '÷']
+let operators = ['+', '-', '*', '/']
 
 function execute(text) {
     result.push(text)
@@ -17,11 +17,12 @@ function clearAll() {
 }
 
 function complete() {
-    const str = result.join(",");
+    const str = result.join("");
     console.log(str);
-    let total = new Function(("return " + str + ""));
-    console.log(total());
-};
+    let total = new Function("return " + str)();
+    console.log(total);
+    return total
+  }
 
 document.querySelectorAll('.button_container > div').forEach((element) => {
     element.addEventListener('click', (event) => {
