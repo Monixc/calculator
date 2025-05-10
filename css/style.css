@@ -69,7 +69,22 @@ body {
   cursor: pointer;
 }
 
+.button_small:hover {
+  background-color: #a1a1a1;
+  color: white;
+}
+
+.button_large:hover {
+  background-color: #a1a1a1;
+  color: white;
+}
+
 .orange {
   color: white;
   background-color: #e89650;
+}
+
+.orange:hover {
+  background-color: #eb740d;
+  color: white;
 }
