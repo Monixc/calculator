@@ -59,12 +59,14 @@ body {
   width: 25%;
   height: 120px;
   border: 1px solid #8e8e8e;
+  cursor: pointer;
 }
 
 .button_large {
   width: 50%;
   height: 120px;
   border: 1px solid #8e8e8e;
+  cursor: pointer;
 }
 
 .orange {
