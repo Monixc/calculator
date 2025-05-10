@@ -15,7 +15,7 @@ function tokenize(expression) {
 
 function evaluateExpression(expression) {
   let token = tokenize(expression);
-  console.log(token);
+
   let numberStack = [];
   let operatorStack = [];
   token.forEach((item) => {
