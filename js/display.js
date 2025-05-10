@@ -1,14 +1,14 @@
-function displayInput(result){
+function displayInput(result) {
   document.querySelector(".display_input").innerHTML = result;
 }
 
-function displayClearAll(){
+function displayClearAll() {
   document.querySelector(".display_input").innerHTML = "";
   document.querySelector(".display_output").innerHTML = "0";
 }
 
-function displayOutput(result){
+function displayOutput(result) {
   document.querySelector(".display_output").innerHTML = result;
 }
 
-module.exports = {displayInput, displayClearAll, displayOutput}
+export { displayInput, displayClearAll, displayOutput };
