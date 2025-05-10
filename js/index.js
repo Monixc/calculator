@@ -1,3 +1,3 @@
-const {eventStart} = require('./input-handler.js');
+import { handleButtonClick } from "./input-handler.js";
 
-eventStart();
+handleButtonClick();
