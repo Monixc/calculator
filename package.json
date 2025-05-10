@@ -5,11 +5,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "jest-environment-jsdom": "^29.7.0",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
     "@jest/globals": "^29.7.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5"
+    "babel-jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2"
   }
 }

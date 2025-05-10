@@ -1,10 +1,10 @@
-import { displayOutput } from "./display.js";
-import {result, handleEqualInput} from './input-handler.js'
+const { displayOutput } = require("./display.js");
+const {result, handleEqualInput} = require('./input-handler.js');
 
 let operators = ['+', '-', '*', '/'];
 const OPERATOR_PRIORITY = {'+' : 1, '-' : 1, '*' : 2, '/' : 2};
 
-export function tokenize(expression) {
+function tokenize(expression) {
     let formatted = expression.replace(/\+/g, ' + ')
     .replace(/\-/g, ' - ')
     .replace(/\*/g, ' * ')
@@ -12,7 +12,7 @@ export function tokenize(expression) {
     return formatted.trim().split(' ');
 }
 
-export function evaluateExpression(){
+function evaluateExpression(){
     if(handleEqualInput() === false){
       return;
     }
@@ -47,7 +47,7 @@ export function evaluateExpression(){
     displayOutput(numberStack[0]);
 }
 
-export function performOperation(a, b, operator) {
+function performOperation(a, b, operator) {
   switch (operator) {
     case '+':
       return a + b;
@@ -65,3 +65,8 @@ export function performOperation(a, b, operator) {
   }
 }
 
+module.exports = {
+  tokenize,
+  evaluateExpression,
+  performOperation,
+};

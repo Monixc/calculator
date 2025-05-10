@@ -1,3 +1,3 @@
-import {eventStart} from './input-handler.js';
+const {eventStart} = require('./input-handler.js');
 
 eventStart();

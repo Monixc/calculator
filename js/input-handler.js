@@ -1,14 +1,14 @@
 // 필요 모듈
-import {evaluateExpression} from './calculator.js';
-import {displayInput, displayClearAll} from './display.js';
+const evaluateExpression = require('./calculator.js');
+const {displayInput, displayClearAll} = require('./display.js');
 
 // 필요 변수
-export let result = "";
+let result = "";
 let calculatorDone = false;
 let operators = ['+', '-', '*', '/'];
 
 // 로직
-export function eventStart(){
+function eventStart(){
   document.querySelectorAll('.button_container > div').forEach((element) => {
       element.addEventListener('click', (event) => {
           let text = event.target.innerText
@@ -22,7 +22,7 @@ export function eventStart(){
   });
 }
 
-export function handleExpressionInput(text) {
+function handleExpressionInput(text) {
   if( !isNaN(parseFloat(text)) ) {
     handleNumInput(text)
   }
@@ -53,7 +53,7 @@ function handleOperatorInput(text) {
   result += text;
 }
 
-export function handleEqualInput() {
+function handleEqualInput() {
   if( operators.includes(result.slice(-1)) ) {
     alert("숫자를 입력해주세요.");
     return false;
@@ -61,12 +61,15 @@ export function handleEqualInput() {
   calculatorDone = true;
 }
 
-export function handleClearInput() {
+function handleClearInput() {
     result = result.slice(0, result.length-1);
     displayInput(result);
 }
 
-export function handleAllClearInput() {
+function handleAllClearInput() {
     result = "";
     displayClearAll();
 }
+
+
+module.exports = {result, eventStart, handleExpressionInput, handleNumInput, handleOperatorInput, handleEqualInput, handleClearInput, handleAllClearInput}
